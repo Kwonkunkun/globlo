@@ -34,7 +34,7 @@ const SearchForm: React.FC = (props) => {
   };
 
   return (
-    <Grid className={classes.root} container spacing={2}>
+    <Grid className={classes.root} container>
       <Grid item xs={6} sm={3}>
         <TextField
           id="outlined-basic"
@@ -47,7 +47,6 @@ const SearchForm: React.FC = (props) => {
         <TextField
           id="outlined-select-currency"
           select
-          label="Select"
           value={currency}
           onChange={handleChange}
           helperText="권역을 선택해 주세요"
@@ -65,7 +64,6 @@ const SearchForm: React.FC = (props) => {
         <TextField
           id="outlined-select-currency"
           select
-          label="Select"
           value={currency}
           onChange={handleChange}
           helperText="구독자 최소범위를 선택해 주세요"
@@ -83,7 +81,6 @@ const SearchForm: React.FC = (props) => {
         <TextField
           id="outlined-select-currency"
           select
-          label="Select"
           value={currency}
           onChange={handleChange}
           helperText="구독자 최대범위를 선택해 주세요"
@@ -103,10 +100,12 @@ const SearchForm: React.FC = (props) => {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: theme.spacing(2),
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(4),
+    textAlign: "center",
   },
   field: {
-    width: "75%",
+    width: "70%",
   },
 }));
 

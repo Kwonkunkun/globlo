@@ -4,6 +4,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import CrawledList from "./components/crawledList";
 import Header from "./components/header";
 import SearchForm from "./components/searchForm";
+import Footer from "./components/footer";
 
 function App() {
   const classes = useStyles();
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <SearchForm />
       <CrawledList />
+      <Footer />
     </div>
   );
 }
@@ -19,12 +21,11 @@ function App() {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      width: "60%",
+      width: "100%",
       height: "100vh",
       margin: "auto",
-      [theme.breakpoints.down("md")]: {
-        width: "100%",
-      },
+      display: "flex",
+      flexDirection: "column",
     },
   })
 );

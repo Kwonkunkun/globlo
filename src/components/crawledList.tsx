@@ -13,6 +13,8 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       width: "100%",
       maxWidth: "100%",
+      height: "100%",
+      overflow: "scroll",
       backgroundColor: theme.palette.background.paper,
     },
     inline: {
@@ -21,11 +23,10 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const CrawledList: React.FC = (props) => {
+const CrawledItem: React.FC = (props) => {
   const classes = useStyles();
-
   return (
-    <List className={classes.root}>
+    <>
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
           <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
@@ -48,49 +49,26 @@ const CrawledList: React.FC = (props) => {
         />
       </ListItem>
       <Divider variant="inset" component="li" />
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-        </ListItemAvatar>
-        <ListItemText
-          primary="Summer BBQ"
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="body2"
-                className={classes.inline}
-                color="textPrimary"
-              >
-                to Scott, Alex, Jennifer
-              </Typography>
-              {" — Wish I could come, but I'm out of town this…"}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-        </ListItemAvatar>
-        <ListItemText
-          primary="Oui Oui"
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="body2"
-                className={classes.inline}
-                color="textPrimary"
-              >
-                Sandra Adams
-              </Typography>
-              {" — Do you have Paris recommendations? Have you ever…"}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
+    </>
+  );
+};
+
+const CrawledList: React.FC = (props) => {
+  const classes = useStyles();
+
+  return (
+    <List className={classes.root}>
+      <CrawledItem />
+      <CrawledItem />
+      <CrawledItem />
+      <CrawledItem />
+      <CrawledItem />
+      <CrawledItem />
+      <CrawledItem />
+      <CrawledItem />
+      <CrawledItem />
+      <CrawledItem />
+      <CrawledItem />
     </List>
   );
 };

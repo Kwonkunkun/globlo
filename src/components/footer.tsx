@@ -4,7 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 
-const Header: React.FC = (props) => {
+const Footer: React.FC = (props) => {
   const classes = useStyles();
 
   return (
@@ -14,7 +14,7 @@ const Header: React.FC = (props) => {
           <Typography variant="h6" className={classes.title}>
             <img
               className={classes.logo}
-              src="https://capsule-render.vercel.app/api?type=shark&color=auto&height=100%&section=header&text=globlo&fontSize=90"
+              src="https://capsule-render.vercel.app/api?type=shark&color=auto&height=100%&section=footer"
             />
           </Typography>
         </Toolbar>
@@ -38,4 +38,4 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default Header;
+export default Footer;
