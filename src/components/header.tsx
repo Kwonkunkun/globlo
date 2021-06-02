@@ -10,7 +10,7 @@ const Header: React.FC = (props) => {
   return (
     <div className={classes.root}>
       <AppBar className={classes.bar} position="static">
-        <Toolbar>
+        <Toolbar className={classes.bar}>
           <Typography variant="h6" className={classes.title}>
             <img
               className={classes.logo}
@@ -26,9 +26,11 @@ const Header: React.FC = (props) => {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    padding: 0,
   },
   bar: {
     boxShadow: "none",
+    padding: "0",
   },
   title: {
     flexGrow: 1,

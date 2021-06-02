@@ -8,21 +8,6 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      width: "100%",
-      maxWidth: "100%",
-      height: "100%",
-      overflow: "scroll",
-      backgroundColor: theme.palette.background.paper,
-    },
-    inline: {
-      display: "inline",
-    },
-  })
-);
-
 const CrawledItem: React.FC = (props) => {
   const classes = useStyles();
   return (
@@ -72,5 +57,20 @@ const CrawledList: React.FC = (props) => {
     </List>
   );
 };
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      width: "100%",
+      maxWidth: "100%",
+      height: "100%",
+      overflow: "scroll",
+      backgroundColor: theme.palette.background.paper,
+    },
+    inline: {
+      display: "inline",
+    },
+  })
+);
 
 export default CrawledList;

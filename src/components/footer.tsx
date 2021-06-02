@@ -10,13 +10,8 @@ const Footer: React.FC = (props) => {
   return (
     <div className={classes.root}>
       <AppBar className={classes.bar} position="static">
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            <img
-              className={classes.logo}
-              src="https://capsule-render.vercel.app/api?type=shark&color=auto&height=100%&section=footer"
-            />
-          </Typography>
+        <Toolbar className={classes.bar}>
+          <Typography variant="h6" className={classes.title}></Typography>
         </Toolbar>
       </AppBar>
     </div>
@@ -29,12 +24,10 @@ const useStyles = makeStyles((theme) => ({
   },
   bar: {
     boxShadow: "none",
+    padding: "0",
   },
   title: {
     flexGrow: 1,
-  },
-  logo: {
-    width: "100%",
   },
 }));
 
