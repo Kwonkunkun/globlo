@@ -39,7 +39,6 @@ const SearchForm: React.FC = () => {
   };
 
   const onClickExpand = () => {
-    console.log("expand");
     setIsExpand(!isExpand);
   };
 
