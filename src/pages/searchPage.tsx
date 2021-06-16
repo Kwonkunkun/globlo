@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import { useQuery, useQueryClient } from "react-query";
 
+import { ReactQueryDevtools } from "react-query/devtools";
 import CrawledList from "../components/crawledList";
 import SearchForm from "../components/searchForm";
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 import Header from "./components/header";
 import Footer from "./components/footer";
@@ -18,6 +19,7 @@ function App() {
         <SearchPage />
         <Footer />
       </div>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
