@@ -1,20 +1,24 @@
 import React from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import { QueryClient, QueryClientProvider } from "react-query";
 
-import CrawledList from "./components/crawledList";
 import Header from "./components/header";
-import SearchForm from "./components/searchForm";
 import Footer from "./components/footer";
+import SearchPage from "./pages/searchPage";
+
+const queryClient = new QueryClient();
 
 function App() {
   const classes = useStyles();
+
   return (
-    <div className={classes.root}>
-      <Header />
-      <SearchForm />
-      <CrawledList />
-      <Footer />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className={classes.root}>
+        <Header />
+        <SearchPage />
+        <Footer />
+      </div>
+    </QueryClientProvider>
   );
 }
 

@@ -8,7 +8,18 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 
-const CrawledItem: React.FC = (props) => {
+import { ChannelInfo } from "../types/types";
+
+interface CrawledListProps {
+  data: Array<ChannelInfo> | undefined;
+}
+
+const CrawledItem: React.FC<ChannelInfo> = ({
+  channel_title,
+  thumbnail_url,
+  country,
+  subscriber_count,
+}) => {
   const classes = useStyles();
   return (
     <>
@@ -17,7 +28,7 @@ const CrawledItem: React.FC = (props) => {
           <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
         </ListItemAvatar>
         <ListItemText
-          primary="Brunch this weekend?"
+          primary={channel_title}
           secondary={
             <React.Fragment>
               <Typography
@@ -26,9 +37,9 @@ const CrawledItem: React.FC = (props) => {
                 className={classes.inline}
                 color="textPrimary"
               >
-                Ali Connors
+                {country}
               </Typography>
-              {" — I'll be in your neighborhood doing errands this…"}
+              {` - 구독자 수 : ${subscriber_count}`}
             </React.Fragment>
           }
         />
@@ -38,22 +49,22 @@ const CrawledItem: React.FC = (props) => {
   );
 };
 
-const CrawledList: React.FC = (props) => {
+const CrawledList: React.FC<CrawledListProps> = ({ data }) => {
   const classes = useStyles();
-
+  console.log(data);
   return (
     <List className={classes.root}>
-      <CrawledItem />
-      <CrawledItem />
-      <CrawledItem />
-      <CrawledItem />
-      <CrawledItem />
-      <CrawledItem />
-      <CrawledItem />
-      <CrawledItem />
-      <CrawledItem />
-      <CrawledItem />
-      <CrawledItem />
+      {data?.map(
+        ({ channel_title, thumbnail_url, country, subscriber_count }, idx) => (
+          <CrawledItem
+            key={idx}
+            channel_title={channel_title}
+            thumbnail_url={thumbnail_url}
+            country={country}
+            subscriber_count={subscriber_count}
+          />
+        )
+      )}
     </List>
   );
 };
