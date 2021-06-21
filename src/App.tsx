@@ -6,6 +6,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import SearchPage from "./pages/searchPage";
+import SignIn from "./pages/signIn";
 
 const queryClient = new QueryClient();
 
@@ -15,9 +16,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className={classes.root}>
-        <Header />
+        <SignIn />
+        {/* <Header />
         <SearchPage />
-        <Footer />
+        <Footer /> */}
       </div>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
